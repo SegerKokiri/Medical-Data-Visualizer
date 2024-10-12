@@ -2,22 +2,21 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-#start
-
+#On Problem 5
 # 1
-df = None
+df = pd.read_csv('medical_examination.csv')
 
 # 2
 df['overweight'] = None
 
 # 3
-
+df['cholesterol'] = np.where(df['cholesterol'] > 1, 1, 0)
+df['gluc'] = np.where(df['gluc'] > 1, 1, 0)
 
 # 4
 def draw_cat_plot():
     # 5
     df_cat = None
-
 
     # 6
     df_cat = None
@@ -59,3 +58,7 @@ def draw_heat_map():
     # 16
     fig.savefig('heatmap.png')
     return fig
+
+
+
+draw_cat_plot()
